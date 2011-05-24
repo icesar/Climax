@@ -5,6 +5,9 @@ $(document).ready( function() {
 	// This adds fancy tooltips to any element with class "fancyToolTip"
 	$(".fancyToolTip").tipTip({maxWidth: "350px"});
 
+	// Initialize the Pretty Photo Overlay Plugin
+	$("a[rel^='prettyPhoto']").prettyPhoto();
+
 	// Simple function to enable "Scroll To" functionality
 	$(".scrollto").click(function(event){
 		//prevent the default action for the click event
@@ -22,7 +25,7 @@ $(document).ready( function() {
 		var target_top = target_offset.top;
 
 		//goto that anchor by setting the body scroll top to anchor top
-		$('html, body').animate({scrollTop:target_top}, 500);
+		$('html, body').animate({scrollTop:target_top}, 1000);
 	});
 
 });

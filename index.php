@@ -30,6 +30,7 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
 	<script src="/js/jquery.tipTip.minified.js" type="text/javascript"></script>
+	<script src="/js/jquery.prettyPhoto.js" type="text/javascript"></script>
 	<script src="/js/climax.js" type="text/javascript"></script>
 </head>
 
@@ -44,7 +45,7 @@
 			<li><a class="scrollto" href="#first-section" id="about">About the<br /><span>Climax</span></a></li>
 			<li><a class="scrollto" href="#second-section" id="agenda">See the<br /><span>Agenda</span></a></li>
 			<li><a class="scrollto" href="#third-section" id="fellows">Meet the<br /><span>Fellows</span></a></li>
-			<li><a class="scrollto" href="#fourth-section" id="attendees">Meet the<br /><span>Guests</span></a></li>
+			<li><a class="scrollto" href="#fourth-section" id="attendees">Meet other<br /><span>Attendees</span></a></li>
 			<li><a class="scrollto" href="#fifth-section" id="register">Click to<br /><span>Register</span></a></li>
 			</ul>
 			
@@ -58,7 +59,7 @@
 
 		<p class="big-message">Last year’s Global Summit was so awesome that we had to rename it.  Join us at the Boulder Theatre as 29 Entrepreneurs working on Ventures in 17 countries take 6 minutes to convince you that their venture will be remembered as having defined progress in our time.</p>
 		
-		<a id="video-intro" class="photo-shadow" href="#" rel="prettyphoto">
+		<a id="video-intro" class="photo-shadow" href="http://vimeo.com/15739837" rel="prettyPhoto">
 			<img src="/images/video-intro.jpg" title="Click for a 3-minute introduction to the Unreasonable Institute." />
 		</a>
 
@@ -437,7 +438,11 @@
 	<div id="fourth-section" class="section">
 	<div class="content">
 
-		<h2 class="blue-text-shadow">Meet the Other Guests</h2>
+		<h2 class="blue-text-shadow">Meet the Other Attendees</h2>
+		
+		<p class="big-message">Some seriously awesome people are coming to the Climax and you will have plenty of time to get to know them. 
+		Below is a partial list of the attendees who've registered so far.</p>
+
 		<?php echo $attendees; ?>
 
 	</div>
@@ -446,19 +451,10 @@
 	<div id="fifth-section" class="section">
 	<div class="content">
 	
-		<h2 class="text-shadow">Register Today</h2>
+		<h2 class="text-shadow">Register for the Climax Today</h2>
 		
 		<div style="width:100%; text-align:left;" >
-			<iframe  src="http://www.eventbrite.com/tickets-external?eid=1501778861&ref=etckt" frameborder="0" height="475" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
-			
-			<div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" >
-				<a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/features?ref=etckt" >Event registration</a>
-				<span style="color:#ddd;" > for </span>
-				<a style="color:#ddd; text-decoration:none;" target="_blank" href="http://2011globalsummit.eventbrite.com?ref=etckt" >
-					The World's Most Unreasonable Global Summit</a>
-				<span style="color:#ddd;" > powered by </span>
-				<a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=etckt" >Eventbrite</a>
-			</div>
+			<iframe  src="http://www.eventbrite.com/tickets-external?eid=1501778861&ref=etckt" frameborder="0" height="540" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>			
 		</div>
 
 	</div>
