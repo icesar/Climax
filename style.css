@@ -27,6 +27,9 @@ del {text-decoration: line-through;}
 table {border-collapse: collapse; border-spacing: 0;}
 a {text-decoration: none;}
 
+sup { font-size: 0.6em; vertical-align: super; }
+small { font-size: 0.8em; }
+
 /* =General
 /*****************************************************/
 html, body { 
@@ -63,7 +66,7 @@ html, body {
 	box-shadow: 0 0 6px #444;
 }
 
-body p {line-height: 26px; margin-bottom: 20px;}
+body p { margin-bottom: 20px; }
 
 h1 { font-weight: normal; font-size: 30px; color: #6b6a6a; }
 
@@ -81,7 +84,7 @@ h2 {
 }
 
 h3 { font-weight: normal; font-size: 22px; font-style: italic; color: #000; margin-bottom: 28px; }
-h4 { font-weight: normal; font-size: 22px; font-style: italic; color: #fff; line-height: 32px; }
+h4 { font-weight: normal; font-family: Arial, sans-serif; font-size: 20px; font-style: normal; font-weight: bold; color: #222; line-height: 24px; }
 h5 { font-weight: normal; font-size: 16px; color: #6b6a6a; }
 
 
@@ -96,8 +99,7 @@ body {
 .section { 
 	display: block; 
 	position: relative; 
-	padding: 140px 0 60px 0;
-	overflow: auto;
+	padding: 140px 0 70px 0;
 }
 
 #fifth-section { padding-bottom: 100px; }
@@ -108,15 +110,23 @@ body {
 	margin: 0 auto; 
 	min-width: 960px; 
 	width: 960px; 
+	overflow: hidden;
+	
 }
 
 
 /* =Links
 /*****************************************************/
-a:link { color: #0a97be; }
-a:hover { color: #00799b; }
-a:focus { color: #0a97be; }
-a:visited { color: #0a97be; }
+
+a { 
+	color: #0A97BE; 
+	text-decoration: underline;
+}
+
+a:hover { 
+	color: #20C4F1;
+	text-decoration: none;
+}
 
 
 /* =Navigation
@@ -128,9 +138,14 @@ a:visited { color: #0a97be; }
 	height: 90px; 
 	width: 100%; 
 	
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=92)";
-	filter: alpha(opacity=92);
-	opacity: .92;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=89)";
+	filter: alpha(opacity=89);
+	opacity: .89;
+	
+	-moz-box-shadow: 0 2px 4px #444;
+	-webkit-box-shadow: 0 2px 4px #444;
+	box-shadow: 0 2px 4px #444;
+	
 }
 
 .navigation-wrapper .navigation { 
@@ -141,15 +156,15 @@ a:visited { color: #0a97be; }
 .navigation-wrapper .navigation a.logo { 
 	float: left; 
 	display: block; 
-	background: url(/images/unreasonable-logo.png) top left no-repeat; 
+	background: url(/images/unreasonable-logo-2.png) top left no-repeat; 
 	text-indent: -999px; 
-	width: 250px; 
-	height: 47px; 
-	margin-top: 23px; 
+	width: 270px; 
+	height: 49px; 
+	margin-top: 21px; 
 }
 
-#nav { float: right; margin-top: 21px; }
-#nav li { float: left; margin-left: 35px; }
+#nav { float: right; margin-top: 22px; }
+#nav li { float: left; margin-left: 30px; }
 #nav li a { 
 	font-family: Arial, sans-serif;
 	font-size: 15px;
@@ -158,6 +173,8 @@ a:visited { color: #0a97be; }
 	
 	display: block; 
 	height: 40px; 
+	border-left: 1px solid #000;
+	padding-left: 6px;
 }
 
 #nav li a span {
@@ -166,34 +183,50 @@ a:visited { color: #0a97be; }
 	letter-spacing: 0.6px;
 }
 
-#nav #about { width: 85px; }
+#nav #about { width: 80px; }
 #nav #agenda { width: 88px; }
-#nav #fellows { width: 93px; }
+#nav #fellows { width: 95px; }
 #nav #attendees { width: 120px; }
-#nav #register { width: 96px; }
+#nav #register { width: 100px; }
 
-#nav li a:link { color: #FFF; }
-#nav li a:hover { color: #ABEB30; }
-#nav li a:focus { color: #FFF; }
-#nav li a:visited { color: #FFF; }
+#nav li a { 
+	color: #888; 
+	text-decoration: none;
+}
 
+#nav li a:hover, #nav li a.link-active { 
+	color: #FFF;
+	border-left: 1px solid #ABEB30;
 
+}
 
 
 
 /* =Sections
 /*****************************************************/
-#first-section { 
+
+#first-section {
+	padding-top: 100px;
 }
 
 #first-section h1.logo { 
-	background: url(/images/climax-logo-2.png) top left no-repeat; 
+	background: url(/images/climax-logo-2.png) 0 40px no-repeat; 
 	margin-bottom: 30px; 
 	width: 960px; 
 	height: 260px; 
 	display: block; 
 	text-indent: -2000px; 
 	overflow: hidden; 
+	padding-top: 40px;
+}
+
+#dont-miss-it { 
+	display: block;
+	height: 203px; 
+	width: 156px; 
+	position: absolute;
+	top: 0;
+	right: 50px;
 }
 
 .big-message {
@@ -203,19 +236,73 @@ a:visited { color: #0a97be; }
 	margin-bottom: 30px;
 }
 
-.small-message {
-	font-size: 13px;
+.big-message span {
 	font-style: normal;
-	color: #03A80E;
+	color: #E229A5;
+}
+
+.small-message {
+	font-size: 14px;
+	font-style: normal;
+	color: #E229A5;
 }
 
 #video-intro {
 	display: block;
+	float: left;
 	background-color: #FFF;
 	border: 1px solid #BBB;
-	width: 620px;
-	height: 270px;
+	width: 580px;
+	height: 330px;
 	padding: 10px;
+	text-decoration: none;
+	margin-bottom: 20px;
+}
+
+#video-intro span {
+	display: block;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-style: normal;
+	padding: 7px 0 0 0;
+}
+
+#share-me {
+	clear: left;
+	float: left;
+	width: 580px;
+	height: 65px;
+	padding: 10px;
+	border: 1px dashed #BBB;
+	background-color: #FFF;
+}
+
+#share-twitter {
+	width: 115px;
+	float: left;
+	padding-top: 2px;
+}
+
+#video-intro:hover {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+	filter: alpha(opacity=90);
+	opacity: .90;
+}
+
+#event-details {
+	display: block;
+	float: right;
+	width: 340px;
+	color: #444;
+	font-size: 15px;
+	line-height: 1.3;
+}
+
+#keep-going {
+	position: absolute;
+	top: -30px;
+	right: 80px;
+	
 }
 
 #second-section, #fourth-section {
@@ -238,6 +325,11 @@ a:visited { color: #0a97be; }
 	text-decoration: none;	
 }
 
+#second-section .small-message, #fourth-section .small-message {
+	color: #EBFF0D;
+	font-style: normal;
+}
+
 .event-highlight {
 	overflow: auto;
 	clear: both;
@@ -253,6 +345,15 @@ a:visited { color: #0a97be; }
 .event-highlight .details-wrapper {
 	float: right;
 	width: 660px;
+}
+
+#schedule {
+	clear: both;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	color: #222;
+	margin: 20px 0;
+	line-height: 1.3em;
 }
 
 .details-wrapper h3 {
@@ -271,20 +372,81 @@ a:visited { color: #0a97be; }
 	font-size: 15px;
 	color: #D1F4FE;
 	line-height: 1.2;
+	float: left;
 }
 
 #eventbrite-attendees-list ul li {
-	padding: 25px 0;
-	border-bottom: 1px dotted #D1F4FE;
-	font-size: 16px;
-	line-height: 1.3;
+	font-family: Arial, sans-serif;
+	width: 300px;
+	height: 75px;
+	float: left;
+	padding: 0 9px 15px 9px;
+	border-left: 1px dotted #D1F4FE;
+	font-size: 14px;
+	line-height: 1.2;
 }
 
 #eventbrite-attendees-list ul li b {
-	font-family: Arial, sans-serif;
+	/*font-family: Georgia, serif;*/
 	color: #222;
-	font-size: 20px;
+	font-size: 16px;
 }
+
+.info-block {
+	display: block;
+	float: left;
+	width: 400px;
+	margin-right: 60px;
+	color: #333;
+	font-size: 15px;
+	line-height: 1.3;
+}
+
+.info-block h4 { margin-bottom: 20px; }
+
+/* =Buttons & Fields
+/*****************************************************/
+#second-section a.register_button {
+	font-family: Arial, sans-serif;
+	display: block;
+	float: right;
+	width: 220px;
+    padding: 15px 0;
+	border: 1px solid #555; /* #12c400; */
+	border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+	color: #222;
+    font-size: 19px;
+    line-height: 1em;
+    text-shadow: 0 1px 1px #888;
+    white-space: nowrap;
+
+	background-color: #12c400;
+	background: -webkit-gradient(linear, left top, left bottom, from(#93ff5e), to(#12c400));
+	background: -moz-linear-gradient(top,  #93ff5e,  #12c400);
+	
+	-moz-box-shadow: 0 1px 2px #888;
+	-webkit-box-shadow: 0 1px 2px #888;
+	box-shadow: 0 1px 2px #888;
+}
+
+#second-section a.register_button:hover {
+	background-color: #93ff5e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#b7fd95), to(#17e102));
+	background: -moz-linear-gradient(top,  #b7fd95,  #17e102);
+}
+
+
+/* =Footer
+/*****************************************************/
+#footer {
+	height: 310px;
+	background: transparent url(/images/unreasonable-crowd.gif) bottom left repeat-x;
+}
+
+
 
 /* =Fellow Thumbnails
 /*****************************************************/

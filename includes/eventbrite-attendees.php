@@ -12,6 +12,8 @@
 
 function eventbrite_attendees( $feed_url ) {
 	
+	$limit = 75;
+	
 	$feed = new SimplePie();
 	$feed->set_feed_url( $feed_url );
 	$feed->enable_cache( false );
@@ -37,6 +39,8 @@ function eventbrite_attendees( $feed_url ) {
 			$out .= '<li>';
 			$out .= $item->get_description();
 			$out .= '</li>';
+			
+			if (--$limit == 0) break;
 		}
 		
 		//$rss_html .= $item[ 'content' ][ 'encoded' ];	   
