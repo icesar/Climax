@@ -256,7 +256,7 @@ a:hover {
 	height: 330px;
 	padding: 10px;
 	text-decoration: none;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 #video-intro span {
@@ -271,7 +271,7 @@ a:hover {
 	clear: left;
 	float: left;
 	width: 580px;
-	height: 65px;
+	height: 90px;
 	padding: 10px;
 	border: 1px dashed #BBB;
 	background-color: #FFF;
@@ -331,7 +331,7 @@ a:hover {
 }
 
 .event-highlight {
-	overflow: auto;
+	overflow: hidden;
 	clear: both;
 	margin-bottom: 40px;
 }

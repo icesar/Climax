@@ -7,12 +7,21 @@
 	 */
 
 	// In the process of debugging.
-	error_reporting(E_ALL);
-	ini_set('display_errors','On');
+	//error_reporting(E_ALL);
+	//ini_set('display_errors','On');
 
 	// These allow us to pull in the Attendees list from an Eventbrite event.
-	include('/Users/icesar/sites/climax/includes/class-simplepie.php');
-	include('/Users/icesar/sites/climax/includes/eventbrite-attendees.php');
+	
+	if ($_SERVER['SERVER_NAME'] == "climax.local") 
+	{
+		include('/Users/icesar/sites/climax/includes/class-simplepie.php');
+		include('/Users/icesar/sites/climax/includes/eventbrite-attendees.php');
+	}
+	else
+	{
+		include('/home/unreason/public_html/climax/includes/class-simplepie.php');
+		include('/home/unreason/public_html/climax/includes/eventbrite-attendees.php');
+	}
 	
 	$attendees = eventbrite_attendees( 'http://www.eventbrite.com/rss/event_list_attendees/1501778861' );
 
@@ -25,7 +34,16 @@
 	<meta name="keywords" content="unreasonable institute, social entrepreneurship, events, conferences, boulder colorado" /> 
 	<meta name="description" content="The Unreasonable Climax Event in Boulder, Colorado" />
 	
-	<title>Unreasonable Climax 2011 — This happens only once a year.</title>
+	<meta property="og:title" content="Unreasonable Climax - Likely the 5 most significant hours of your life." />
+	<meta property="og:type" content="non_profit" />
+	<meta property="og:url" content="http://unreasonableclimax.org/" />
+	<meta property="og:image" content="http://unreasonableclimax.org/images/fun-crowd.jpg" />
+	<meta property="og:site_name" content="Unreasonable Climax" />
+	<meta property="fb:admins" content="688854461" />
+
+	<link rel="shortcut icon"  href="favicon.ico" type="image/x-icon" />
+	
+	<title>Unreasonable Climax 2011 — 25 entrepreneurs with 1 mission: define progress in our time.</title>
 	<link href="/style.css" media="screen" rel="stylesheet" type="text/css" />
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
@@ -35,7 +53,21 @@
 
 	<script src="http://connect.facebook.net/en_US/all.js#appId=165312903531422&amp;xfbml=1"></script>
 	<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-
+	
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-8251292-7']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+	
 </head>
 
 <body>
@@ -49,7 +81,7 @@
 			<li><a class="link-active" href="#first-section" id="about">About the<br /><span>Climax</span></a></li>
 			<li><a class="" href="#second-section" id="agenda">See the<br /><span>Agenda</span></a></li>
 			<li><a class="" href="#third-section" id="fellows">Meet the<br /><span>Fellows</span></a></li>
-			<li><a class="" href="#fourth-section" id="attendees">Meet the other<br /><span>Attendees</span></a></li>
+			<li><a class="" href="#fourth-section" id="attendees">Who is<br /><span>Attending?</span></a></li>
 			<li><a class="" href="#fifth-section" id="register">Click to<br /><span>Register</span></a></li>
 			</ul>
 			
@@ -63,11 +95,11 @@
 	
 		<h1 class="logo">The Unreasonable Institute Presents the Global Climax</h1>
 		<a id="dont-miss-it" href="#fifth-section"><img src="/images/dont-miss-it-2.png" /></a>
-		
-		<p class="big-message">Join us at the Boulder Theatre on July 22<sup>nd</sup> as <span>25&nbsp;Entrepreneurs</span> working on Ventures in 
-		<span>17&nbsp;countries</span> take <span>6&nbsp;minutes</span> to convince you that their venture will be remembered as having 
-		<span>defined progress</span> in our&nbsp;time.</p>
 
+		<p class="big-message">On July 22<sup>nd</sup>, <span>850&nbsp;people</span> will gather at the Historic Boulder Theater for one reason. 
+		To listen to <span>25&nbsp;entrepreneurs</span> from <span>17&nbsp;countries</span> share their plans to <span>define progress</span> 
+		in our time. Be one of them!</p>
+		
 		<div id="event-details">
 
 			<h4>When?</h4>
@@ -81,9 +113,13 @@
 			<p><em>The Historic Boulder Theatre</em><br />
 			2032 14<sup>th</sup> St. Boulder, CO</p>
 
-			<a href="http://maps.google.com/maps?oe=utf-8&amp;client=firefox-a&amp;ie=UTF8&amp;q=2032+14th+St.+Boulder,+CO&amp;fb=1&amp;gl=us&amp;hnear=0x876b8d4e278dafd3:0xc8393b7ca01b8058,Boulder,+CO&amp;cid=0,0,7707646959330703036&amp;ll=40.019924,-105.277305&amp;spn=0.006573,0.012875&amp;z=14&amp;source=embed" target="_blank">
+			<p><a href="http://maps.google.com/maps?oe=utf-8&amp;client=firefox-a&amp;ie=UTF8&amp;q=2032+14th+St.+Boulder,+CO&amp;fb=1&amp;gl=us&amp;hnear=0x876b8d4e278dafd3:0xc8393b7ca01b8058,Boulder,+CO&amp;cid=0,0,7707646959330703036&amp;ll=40.019924,-105.277305&amp;spn=0.006573,0.012875&amp;z=14&amp;source=embed" target="_blank">
 				<img src="/images/event-map-2.gif" title="Click to see the venue on Google Maps." />
-			</a>
+			</a></p>
+			
+			<p><strong>The Unreasonable Institute</strong> is a mentor-intensive acceleration program for entrepreneurs tackling social
+			and environmental problems. Each year, we unite 25 entrepreneurs from every corner of the globe with 50 world-class mentors,
+			to live and work under the same roof for six weeks in Boulder, CO. <a href="http://vimeo.com/15739837" rel="prettyPhoto">Watch our 3-min trailer.</a></p>
 						
 		</div>
 		
@@ -132,7 +168,7 @@
 					Free! (as in, get your own drinks)
 				</p>
 				
-				<a href="http://globalsummitdrinks.eventbrite.com/" target="_blank" class="register_button">RSVP on Eventbrite</a>
+				<a href="http://unreasonabledrinks.eventbrite.com/" target="_blank" class="register_button">RSVP on Eventbrite</a>
 
 			</div>
 			
@@ -144,11 +180,10 @@
 
 			<div class="details-wrapper">
 
-				<h3>Unreasonable Climax Presentations &larr;<em>(the main event!)</em></h3>
+				<h3>Unreasonable Climax &larr;<em>(the main event!)</em></h3>
 	
-				<p>Our Unreasonable Entrepreneurs will be challenged to convince you that their ventures will be remembered as having defined 
-				progress in our time (in 6 minutes).  Our aspiration is to pack the Historic Boulder Theatre by selling out all 850 seats. 
-				To have you join us will be a privilege!</p>
+				<p>25 entrepreneurs take the the stage at the Boulder Theater before 850 people for six minutes each. Why? To unveil their visions 
+				for defining progress in our time. Our hope? You are moved to tears and brought to your feet.</p>
 									
 				<p class="details">
 					Friday July 22<sup>nd</sup>, 1:00 - 6:00pm<br />
@@ -184,9 +219,9 @@
 
 				<h3>Unreasonable Evening Banquet</h3>
 	
-				<p>This is your chance to build lasting relationships with the Unreasonable Fellows, Mentors, Partners and community.  The beautiful 
-				St. Julien Hotel in downtown Boulder will have live music and stunning mountain views to complement the delicious food, tasty drinks 
-				and top-notch company. (Space is limited.)</p>
+				<p>This is your chance to build relationships with everyone from a former child soldier from Liberia to the co-founder of Google.org. 
+				The beautiful St. Julien Hotel in downtown boulder hosts a night of live music, delicious food, tasty drinks, world-class company with 
+				Unreasonable Fellows, Mentors, Partners, and Friends. Be our guest! (Space is limited.)</p>
 	
 				<p class="details">
 					Friday July 22<sup>nd</sup>, 7:00 - 10:30pm<br />
@@ -209,9 +244,8 @@
 
 				<h3>Post-Climax Workshops</h3>
 				
-				<p>Ideas are a dime a dozen, and only creation, ingenuity, and actually "getting shit done" will change the world.  Join the Unreasonable 
-				Fellows as they lead workshops focused on the tangible skills and practical wisdom it takes to launch high-impact initiatives in all 
-				corners of the globe.</p>
+				<p>Everyone's got ideas, but only disciplined execution, pathological collaboration, and relentless drive will change the world. 
+				The Unreasonable Fellows will lead workshops on the tangible skills required to measurably improve lives in every corner of the globe.</p>
 	
 				<p class="details">
 					Saturday July 23<sup>rd</sup>, 11:00am - 4:00pm<br />
@@ -232,16 +266,17 @@
 		<div class="content">
 
 			<h2 class="text-shadow">Meet the Fellows</h2>
-			<p class="big-message">Below are the 29 Unreasonable Entrepreneurs who are just crazy enough to ignore the skeptics, remain undeterred by failure, and who, above all, are passionate and practical enough to change the world.<br /><span class="small-message">(Roll over their photos to learn more.)</span></p>
-		
-			<div id='awesome-people'>				
+			<p class="big-message">Below are the 25 Unreasonable Entrepreneurs who are just crazy enough to ignore the skeptics, remain undeterred by failure, and who, above all, are passionate and practical enough to change the world.<br /><span class="small-message">(Roll over their photos to learn more.)</span></p>
+
+
+				<div id='awesome-people'>				
 					<div class="profile_thumb ">
 						<a 	href="http://unreasonableinstitute.org/profile/ajohnson/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Alissa&nbsp;Johnson</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;CalSolAgua&lt;/div&gt;&lt;p&gt;I  believe that simplicity is the ultimate sophistication &lt;/p&gt;</div>'>
-
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2010/12/alissa-johnson-100x66.jpg" alt="Photo of Alissa&nbsp;Johnson" />
 						</a>
+
 					</div>
 				
 								
@@ -255,11 +290,11 @@
 				
 								
 					<div class="profile_thumb ">
-
 						<a 	href="http://unreasonableinstitute.org/profile/ckoenig/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Cynthia&nbsp;Koenig</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Wello&lt;/div&gt;&lt;p&gt;committed. passionate. thirsty.&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/Cynthia1.jpg" alt="Photo of Cynthia&nbsp;Koenig" />
+
 						</a>
 					</div>
 				
@@ -271,13 +306,13 @@
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2010/12/daniel_gross_worldhaus-100x66.jpg" alt="Photo of Daniel&nbsp;Gross" />
 						</a>
 					</div>
-
 				
 								
 					<div class="profile_thumb ">
 						<a 	href="http://unreasonableinstitute.org/profile/drao/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Devi Prasad&nbsp;Rao</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Arohana Dairy Private Limited&lt;/div&gt;&lt;p&gt;A versatile engineer, Banker turned entrepreneur with a flair for building processes and businesses for scale and a pass&lt;/p&gt;</div>'>
+
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/DPR-Profile.jpg" alt="Photo of Devi Prasad&nbsp;Rao" />
 						</a>
 					</div>
@@ -289,25 +324,15 @@
 							title='<div class="thumb_info"><h3>Donna&nbsp;Morton</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;First Power&lt;/div&gt;&lt;p&gt;Power to the People: Driven by innovation and a commitment to future generations&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/n599333337_1161797_8646.jpg" alt="Photo of Donna&nbsp;Morton" />
 						</a>
+					</div>
+				
+								
+					<div class="profile_thumb ">
 
-					</div>
-				
-								
-					<div class="profile_thumb ">
-						<a 	href="http://unreasonableinstitute.org/profile/ewadongo/" 
-							class="imageframe fancyToolTip" target="_blank"
-							title='<div class="thumb_info"><h3>Evans&nbsp;Wadongo</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Use solar,save lives&lt;/div&gt;&lt;p&gt;Transforming villages out of poverty, one village at a time&lt;/p&gt;</div>'>
-							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/DSC00510.jpg" alt="Photo of Evans&nbsp;Wadongo" />
-						</a>
-					</div>
-				
-								
-					<div class="profile_thumb ">
 						<a 	href="http://unreasonableinstitute.org/profile/gmanchanda/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Gaurav&nbsp;Manchanda</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;One Degree Solar&lt;/div&gt;&lt;p&gt;We believe that with affordable energy and communications, there no longer have to be six degrees of separation.&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/ods-logo-sun.jpg" alt="Photo of Gaurav&nbsp;Manchanda" />
-
 						</a>
 					</div>
 				
@@ -319,13 +344,13 @@
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2010/12/hemant-nitturkar-100x66.jpg" alt="Photo of Hemant&nbsp;Nitturkar" />
 						</a>
 					</div>
+
 				
 								
 					<div class="profile_thumb ">
 						<a 	href="http://unreasonableinstitute.org/profile/jyang/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Jamie&nbsp;Yang</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;EGG-energy&lt;/div&gt;&lt;p&gt;I think I&#039;m very reasonable&lt;/p&gt;</div>'>
-
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/JYang_Unreasonable.jpg" alt="Photo of Jamie&nbsp;Yang" />
 						</a>
 					</div>
@@ -337,11 +362,11 @@
 							title='<div class="thumb_info"><h3>Jennifer&nbsp;Guintu</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Prospéritas Microfinanzas&lt;/div&gt;&lt;p&gt;I range from a bookworm to a social butterfly, from leader to apprentice. I don&#039;t let life&#039;s opportunities pass me by.&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/jen-profile-pic-2.jpg" alt="Photo of Jennifer&nbsp;Guintu" />
 						</a>
+
 					</div>
 				
 								
 					<div class="profile_thumb ">
-
 						<a 	href="http://unreasonableinstitute.org/profile/lduarte/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Luis&nbsp;Duarte</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;YoReciclo&lt;/div&gt;&lt;p&gt;If we believe and we act, we can make a difference and a better place for our children&lt;/p&gt;</div>'>
@@ -355,9 +380,9 @@
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Maria&nbsp;Rodriguez</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Worms 4 Change&lt;/div&gt;&lt;p&gt;worms.love.worms&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/163273_10150386731950425_621030424_16442389_5968403_n.jpg" alt="Photo of Maria&nbsp;Rodriguez" />
+
 						</a>
 					</div>
-
 				
 								
 					<div class="profile_thumb ">
@@ -373,9 +398,9 @@
 						<a 	href="http://unreasonableinstitute.org/profile/mmatadi/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Morris&nbsp;Matadi</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Initiative for the Development of Former Child Soldiers (IDEFOCS) &lt;/div&gt;&lt;p&gt;Former child soldier turned entrepreneur!&lt;/p&gt;</div>'>
+
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/Morris.jpg" alt="Photo of Morris&nbsp;Matadi" />
 						</a>
-
 					</div>
 				
 								
@@ -389,11 +414,11 @@
 				
 								
 					<div class="profile_thumb ">
+
 						<a 	href="http://unreasonableinstitute.org/profile/mingawale/" 
 							class="imageframe fancyToolTip" target="_blank"
-							title='<div class="thumb_info"><h3>Myshkin&nbsp;Ingawale</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Biosense Technologies&lt;/div&gt;&lt;p&gt;Researcher and Entrepreneur&lt;/p&gt;</div>'>
+							title='<div class="thumb_info"><h3>Myshkin&nbsp;Ingawale</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Biosense Technologies&lt;/div&gt;&lt;p&gt;Co-founder - Biosense Technologies; Inventor - Copenhagen Wheel&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/04/myshkinUR.jpg" alt="Photo of Myshkin&nbsp;Ingawale" />
-
 						</a>
 					</div>
 				
@@ -405,13 +430,13 @@
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/04/3.jpg" alt="Photo of Nathaniel&nbsp;Koloc" />
 						</a>
 					</div>
+
 				
 								
 					<div class="profile_thumb ">
 						<a 	href="http://unreasonableinstitute.org/profile/pcompas/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Patricia&nbsp;Compas</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;DayOne Response, Inc.&lt;/div&gt;&lt;p&gt;Driven by a passion for helping others.  Faces challenges with a positive outlook and an unwavering purpose.&lt;/p&gt;</div>'>
-
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/Tricia_discussing_Waterbag_with_Thai_Marines.jpg" alt="Photo of Patricia&nbsp;Compas" />
 						</a>
 					</div>
@@ -423,11 +448,11 @@
 							title='<div class="thumb_info"><h3>Piyush&nbsp;Jaju</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;ONergy&lt;/div&gt;&lt;p&gt;ONergizing the BoP&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/piyush.jpg" alt="Photo of Piyush&nbsp;Jaju" />
 						</a>
+
 					</div>
 				
 								
 					<div class="profile_thumb ">
-
 						<a 	href="http://unreasonableinstitute.org/profile/rjanagam/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Raj&nbsp;Janagam</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Cycle Chalao!&lt;/div&gt;&lt;p&gt;A Student of Philosophy &amp; Social Entrepreneurship, Exploring India &amp; Politics through Cycling :)&lt;/p&gt;</div>'>
@@ -441,9 +466,9 @@
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Saba&nbsp;Gul</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;BLISS: Business &amp; Life Skills School&lt;/div&gt;&lt;p&gt;Another world is not only possible, she is on her way. On a quiet day, I can hear her breathing.&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/for_ui.jpg" alt="Photo of Saba&nbsp;Gul" />
+
 						</a>
 					</div>
-
 				
 								
 					<div class="profile_thumb ">
@@ -459,9 +484,9 @@
 						<a 	href="http://unreasonableinstitute.org/profile/ssiroya/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Shivani&nbsp;Siroya</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;InVenture&lt;/div&gt;&lt;p&gt;Out to pulverize poverty!&lt;/p&gt;</div>'>
+
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/blue.jpg" alt="Photo of Shivani&nbsp;Siroya" />
 						</a>
-
 					</div>
 				
 								
@@ -475,11 +500,11 @@
 				
 								
 					<div class="profile_thumb ">
+
 						<a 	href="http://unreasonableinstitute.org/profile/tdalvi/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Tiago&nbsp;Dalvi</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Solidarium&lt;/div&gt;&lt;p&gt;I am passionate about Social Business and Fair Trade, with the ambition to generate a great impact in the world.&lt;/p&gt;</div>'>
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/foto-tiago.png" alt="Photo of Tiago&nbsp;Dalvi" />
-
 						</a>
 					</div>
 				
@@ -491,17 +516,18 @@
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2011/03/photo-ties-kroezen-unreasonable.jpg" alt="Photo of Ties&nbsp;Kroezen" />
 						</a>
 					</div>
+
 				
 								
 					<div class="profile_thumb ">
 						<a 	href="http://unreasonableinstitute.org/profile/ayang/" 
 							class="imageframe fancyToolTip" target="_blank"
 							title='<div class="thumb_info"><h3>Zhaohui&nbsp;Yang</h3><div class="user_type">Unreasonable Fellow 2011</div>&lt;div class=&quot;user_title&quot;&gt;Beijing Green Channel Tech. Co., Ltd&lt;/div&gt;&lt;p&gt;Aston MBA grad, passionate for being eco-friendly, excited by business solutions to 3Rs&lt;/p&gt;</div>'>
-
 							<img src="http://unreasonableinstitute.org/wp-content/uploads/2010/12/zhaohui-yang-profile-100x66.jpg" alt="Photo of Zhaohui&nbsp;Yang" />
 						</a>
-					</div>
+					</div>					
 				</div>
+
 		</div>
 	</div>
 
@@ -510,8 +536,7 @@
 
 		<h2 class="blue-text-shadow">Meet the Other Attendees</h2>
 		
-		<p class="big-message">Some seriously awesome people are coming to the Climax and you will have the time to get to know them.
-		<span class="small-message">(The list below is generated automatically to include the 75 most recent registrants.)</span></p>
+		<p class="big-message">A gathering is only as good as the people who are a part of it. Here are 75 reasons you shouldn't be anywhere else this&nbsp;night.</p>
 
 		<?php echo $attendees; ?>
 
@@ -538,6 +563,8 @@
 				We appreciate how you phrased the question.  To answer it properly, we turn to E. B. White who once said,
 				"I get up every morning determined to both change the world and have one hell of a good time.  Sometimes this
 				makes planning my day difficult."  We are making it easy for you.</p>
+				
+			<p><a href="#first-section">&uarr; Back to top</a></p>
 						
 		</div>
 
